@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TodoRequest;
 use App\Models\Todo;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,9 +17,18 @@ class TodoController extends Controller
         ]);
     }
 
-    public function done(Request $request, Todo $todo) {
-        $request->validate([]);
+    public function done(TodoRequest $request, Todo $todo) {
         $todo->markAsCompleted();
+        return redirect(route("todos.index"));
+    }
+
+    public function store(Request $request) {
+        $form = $request->validate([
+            'title' => "required|string"
+        ]);
+
+        $form["user_id"] = auth()->id();
+        Todo::create($form);
 
         return redirect(route("todos.index"));
     }
