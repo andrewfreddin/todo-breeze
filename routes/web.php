@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function() {
-    Route::get('/dashboard', function () { return Inertia::render('Dashboard'); })->name('dashboard');
+    Route::get('/dashboard', \App\Http\Controllers\DashboardController::class . "@index")->name('dashboard');
     Route::get("todos", \App\Http\Controllers\TodoController::class . "@index")->name("todos.index");
     Route::post("todos", \App\Http\Controllers\TodoController::class . "@store")->name("todos.store");
     Route::patch("todos/{todo}/done", \App\Http\Controllers\TodoController::class . "@done")->name("todos.done");

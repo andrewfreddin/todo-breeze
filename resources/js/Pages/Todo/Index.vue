@@ -1,6 +1,6 @@
 <template>
     <breeze-authenticated-layout>
-        <create-todo :show="showModal" @toggle="showModal = !showModal" />
+        <create-todo :show="showModal" @toggle="showModal = !showModal"/>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Stuff I Need To Do
@@ -17,18 +17,24 @@
                         Create New Todo
                     </button>
                     <div class="p-6 bg-white border-b border-gray-200">
-                        THIS IS THE TODO INDEX
+                        My Todos
                     </div>
-                    <div class="p-6 bg-white border-b border-gray-200" v-for="todo in todos">
-                        {{ todo.title}}
-                        <inertia-link
-                            class="float-right inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150"
-                            :href="'/todos/' + todo.id + '/done'"
-                            method="patch"
-                            as="button"
-                            type="button">
+
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <div v-if="todos.length > 0"  v-for="todo in todos">
+                            {{ todo.title}}
+                            <inertia-link
+                                class="float-right inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray transition ease-in-out duration-150"
+                                :href="'/todos/' + todo.id + '/done'"
+                                method="patch"
+                                as="button"
+                                type="button">
                                 DONE
-                        </inertia-link>
+                            </inertia-link>
+                        </div>
+                        <div v-else>
+                            You don't have any pending Todos
+                        </div>
                     </div>
                 </div>
             </div>
@@ -40,13 +46,16 @@
     import BreezeAuthenticatedLayout from '@/Layouts/Authenticated'
     import BButton from "@/Components/Button";
     import CreateTodo from "@/Pages/Todo/Create";
+    import Chart from "@/Components/Chart";
 
     export default {
-        props:{
-          todos: {
-              type: Array,
-              default(){ return []; }
-          }
+        props: {
+            todos: {
+                type: Array,
+                default() {
+                    return [];
+                }
+            }
         },
 
         data() {
@@ -59,6 +68,7 @@
             BButton,
             BreezeAuthenticatedLayout,
             CreateTodo,
+            Chart
         },
     }
 </script>

@@ -34,11 +34,12 @@ class TodoFactory extends Factory
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory
      */
-    public function completed()
+    public function completed(Carbon $date = null)
     {
-        return $this->state(function (array $attributes) {
+        $completionDate = $date ?? Carbon::now();
+        return $this->state(function (array $attributes) use($completionDate){
             return [
-                'completed_at' => Carbon::now(),
+                'completed_at' => $completionDate,
             ];
         });
     }

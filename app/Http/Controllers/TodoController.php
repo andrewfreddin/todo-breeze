@@ -9,6 +9,10 @@ use Inertia\Inertia;
 
 class TodoController extends Controller
 {
+    /**
+     * Returns the index of pending todos
+     * @return \Inertia\Response
+     */
     public function index()
     {
         $user = auth()->user();
@@ -17,16 +21,24 @@ class TodoController extends Controller
         ]);
     }
 
+    /**
+     * Marks a Todo as completed
+     * @param TodoRequest $request
+     * @param Todo $todo
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function done(TodoRequest $request, Todo $todo) {
         $todo->markAsCompleted();
         return redirect(route("todos.index"));
     }
 
+    /**
+     * Create a new Todo and store it in the DB
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store(Request $request) {
-        $form = $request->validate([
-            'title' => "required|string"
-        ]);
-
+        $form = $request->validate(['title' => "required|string"]);
         $form["user_id"] = auth()->id();
         Todo::create($form);
 

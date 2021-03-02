@@ -10,7 +10,8 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
-                        You're logged in!
+                        <span>Welcome Back!</span>
+                        <chart :height="100" :labels="labels" :values="values" />
                     </div>
                 </div>
             </div>
@@ -20,10 +21,24 @@
 
 <script>
     import BreezeAuthenticatedLayout from '@/Layouts/Authenticated'
+    import Chart from "@/Components/Chart";
 
     export default {
+        props: {
+            labels: {
+                type: Array,
+                default() { return []; }
+            },
+
+            values: {
+                type: Array,
+                default() { return []; }
+            },
+        },
+
         components: {
             BreezeAuthenticatedLayout,
+            Chart,
         },
     }
 </script>

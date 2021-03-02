@@ -10,6 +10,7 @@ class Todo extends Model
     use HasFactory;
 
     protected $fillable = [ 'user_id', 'title' ];
+    protected $dates = ['completed_at'];
 
     /**
      * Sets the todo item as completed in the database
