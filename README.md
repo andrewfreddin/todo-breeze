@@ -31,6 +31,7 @@ But you can also just register a new account if you really wanted to.
 
 ### Controllers
 The application has two main controllers 
+
 DashboardController: Used to generate the main dashboard page
     - Dashboard controller is a simple dashboard that shows a graph of your weekly completed Todos. 
 
