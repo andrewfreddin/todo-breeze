@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8e660ac-1144-432f-b457-2df3b594a03e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/Chart.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/breezetest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/breezetest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TodoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TodoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Todo.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Todo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/TodoRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TodoFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TodoFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Todo/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Todo/Create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Pages/Todo/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Todo/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +75,7 @@
       <updated>1614532952392</updated>
       <workItem from="1614532953476" duration="6497000" />
       <workItem from="1614622635372" duration="273000" />
-      <workItem from="1614622928990" duration="29969000" />
+      <workItem from="1614622928990" duration="30764000" />
     </task>
     <servers />
   </component>

@@ -55,6 +55,7 @@
             submit() {
                 this.$emit('toggle');
                 this.$inertia.post(route('todos.store'), this.form);
+                this.form.title = "";
             },
         },
 
